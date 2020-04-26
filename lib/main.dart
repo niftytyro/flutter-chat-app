@@ -10,7 +10,7 @@ class BakBakApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: ChatScreen.id,
+      initialRoute: SignInScreen.id,
       routes: {
         SignInScreen.id: (context) => SignInScreen(),
         ChatScreen.id: (context) => ChatScreen(),

@@ -99,7 +99,8 @@ class _ChatScreenState extends State<ChatScreen> {
                         _firestore.collection('messages').add({
                           'message': message,
                           'sender': _loggedInUser.displayName,
-                          'sender_email': _loggedInUser.email
+                          'sender_email': _loggedInUser.email,
+                          'time': DateTime.now().toIso8601String().toString(),
                         });
                         setState(() {
                           _controller.clear();
@@ -128,7 +129,7 @@ class MessageStream extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot>(
-      stream: _firestore.collection('messages').snapshots(),
+      stream: _firestore.collection('messages').orderBy('time').snapshots(),
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
           return CircularProgressIndicator(
