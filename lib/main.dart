@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:bakbak/constants.dart';
-import 'package:bakbak/screens.dart/welcome_screen.dart';
 import 'package:bakbak/screens.dart/sign_in_screen.dart';
 import 'package:bakbak/screens.dart/chat_screen.dart';
 
@@ -11,9 +10,8 @@ class BakBakApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: WelcomeScreen.id,
+      initialRoute: ChatScreen.id,
       routes: {
-        WelcomeScreen.id: (context) => WelcomeScreen(),
         SignInScreen.id: (context) => SignInScreen(),
         ChatScreen.id: (context) => ChatScreen(),
       },
